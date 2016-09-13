@@ -38,7 +38,7 @@ module.exports = function( ceiling ) {
     result *= primeFactors[fac];
   }
 
-  result *= 2;
+  result *= (2 * (ceiling/ 10));
 
   return result;
 };
