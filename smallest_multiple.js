@@ -8,7 +8,37 @@
  */
 module.exports = function( ceiling ) {
   // do work here
+  let result = 1;
+  let primeFactors = [];
 
+  function isPrime(x) {
 
-  return 0;
+    if(x < 2) {
+      return false;
+    } else {
+      for(let i = 2; i < x; i++) {
+        if (x % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+
+  for(let i = 0; i <= ceiling; i++) {
+    if(isPrime(i)) {
+      primeFactors.push(i);
+    } else if(primeFactors.indexOf(Math.sqrt(i)) > -1) {
+      primeFactors.push(Math.sqrt(i));
+    }
+  }
+  console.log(primeFactors);
+
+  for(let fac in primeFactors) {
+    result *= primeFactors[fac];
+  }
+
+  result *= 2;
+
+  return result;
 };
