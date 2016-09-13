@@ -32,13 +32,12 @@ module.exports = function( ceiling ) {
       primeFactors.push(Math.sqrt(i));
     }
   }
-  console.log(primeFactors);
 
   for(let fac in primeFactors) {
     result *= primeFactors[fac];
   }
 
-  result *= (2 * (ceiling/ 10));
+  result *= Math.pow(2, Math.floor(ceiling / 10));
 
   return result;
 };
